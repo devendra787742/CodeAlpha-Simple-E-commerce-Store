@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>My Orders</h1>
+
+{% if orders %}
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Order ID</th>
+        <th>Total Amount</th>
+        <th>Date</th>
+    </tr>
+
+    {% for order in orders %}
+    <tr>
+        <td>#{{ order.id }}</td>
+        <td>₹{{ order.total_amount }}</td>
+        <td>{{ order.created_at|date:"d M Y, H:i" }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>You have not placed any orders yet.</p>
+{% endif %}
+{% endblock %}

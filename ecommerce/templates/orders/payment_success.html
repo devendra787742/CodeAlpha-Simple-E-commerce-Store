@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Payment Successful 🎉</h2>
+
+<p>Your payment for Order <strong>#{{ order.id }}</strong> was successful.</p>
+<p>Amount Paid: ₹{{ order.total_amount }}</p>
+
+<a href="/orders/history/">View My Orders</a>
+{% endblock %}
